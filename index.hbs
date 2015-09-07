@@ -1,0 +1,42 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! The big featured header }}
+<header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <div class="main-filter"></div>
+    <nav class="main-nav overlay clearfix">
+        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+        {{#if @blog.navigation}}
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        {{/if}}
+    </nav>
+    <div class="vertical">
+        <div class="hashtags">
+            <p>
+                <a href="#" data-description="Quorum est la première start-up de civitech - technologie civique - en Europe. La technologie envahit tous les domaines : Fintech, Biotech, Greentech. Nous exploitons le pouvoir de synchronisation et de communication des technologies au service des grands mouvements de la société.">#civitech</a>
+                <a href="#" data-description="Tirer l’intelligence de la donnée. Partir des usages, comprendre les territoires, pour repenser ses décisions et changer sa manière d’interagir avec le public.">#data intelligence</a>
+                <a href="#" data-description="Utiliser le pouvoir analytique et logistique des nouvelles technologies et le rendre disponible au plus grand nombre.">#empowerment</a>
+                <a href="#" data-description="Impliquer les individus à toutes les échelles. Ce sont les petites actions qui construisent les grands mouvements.">#grassroots</a>
+                <a href="#" data-description="Le digital et la technologie ne sont plus une pièce du puzzle. Les actions impactantes de demain seront celles qui utiliseront les nouvelles technologies, en feront une priorité dans leur stratégie pour  conserver, toujours, une longueur d’avance.">#digital</a>
+            </p>
+        </div>
+        <div class="description">
+            I'm the content !
+        </div>
+    </div>
+    <!--<div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">{{@blog.title}}</h1>
+            <h2 class="page-description">{{@blog.description}}</h2>
+        </div>
+    </div>-->
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
+
+{{! The main content area on the homepage }}
+<main id="content" class="content" role="main">
+
+    {{! The tag below includes the post loop - partials/loop.hbs }}
+    {{> "loop"}}
+
+</main>
